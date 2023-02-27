@@ -107,6 +107,16 @@
     <script>
       $("article").children("img").attr("class", "image-center");
       $("p").last().remove();
+      
+      function getRandomNumber(size) {
+        return Math.floor(Math.random() * size);
+      }
+
+      $("#title").css("font-size", getRandomNumber(100));
+
+     $("<li>Because they talk about puppies in cups.</li>")
+     .insertAfter("li");
+
     </script>
   </body>
 </html>
