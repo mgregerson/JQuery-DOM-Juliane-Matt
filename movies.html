@@ -1,32 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <title>Document</title>
-    <link rel="stylesheet" href="https://unpkg.com/bootstrap@5/dist/css/bootstrap.css" />
-
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/bootstrap@5/dist/css/bootstrap.css"
+    />
+    <link rel="stylesheet" href="movies.css" />
+  </head>
+  <body>
     <form>
-        <input 
-          id="film" 
-          type="text" 
-          placeholder="Put your favorite movie here" />
-        <input 
-          id="rating" 
-          type="number" 
-          placeholder="What do you rate this movie between 0 and 10"
-          max="10" 
-          min="0" ; />
-        <button type="Submit">Submit</button>
-
+      <input
+        id="film"
+        type="text"
+        placeholder="Favorite Movie?"
+        minlength="2"
+      />
+      <input
+        id="rating"
+        type="number"
+        placeholder="Movie Rating- 0-10"
+        max="10"
+        min="0"
+      />
+      <button type="button" id="submit">Submit</button>
     </form>
 
     <div id="fav-movies-list">
-        <ul></ul>
+      <ul></ul>
     </div>
-
-
-
-</head>
-
+    <script src="https://unpkg.com/jquery"></script>
+    <script src="movies.js"></script>
+  </body>
 </html>
