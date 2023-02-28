@@ -107,16 +107,39 @@
     <script>
       $("article").children("img").attr("class", "image-center");
       $("p").last().remove();
-      
+
       function getRandomNumber(size) {
         return Math.floor(Math.random() * size);
       }
 
       $("#title").css("font-size", getRandomNumber(100));
 
-     $("<li>Because they talk about puppies in cups.</li>")
-     .insertAfter("li");
+      $("<li>Because they talk about puppies in cups.</li>").insertAfter("li");
 
+      $("aside").html(
+        "<p>I sincerely apologize for caring so much about puppies in cups. Won't happen again.</p>"
+      );
+
+      $("input").on("change", function () {
+        let backgroundColorsInput = [
+          Number($("input").val()),
+          Number($("input:eq(1)").val()),
+          Number($("input:eq(2)").val()),
+        ];
+        console.log(backgroundColorsInput);
+        $("body").css(
+          "background-color",
+          `rgba(${backgroundColorsInput[0]},
+          ${backgroundColorsInput[2]},
+          ${backgroundColorsInput[1]})`
+        );
+      });
+
+      // let backgroundColorsInput = [
+      //   Number($("input").val()),
+      //   Number($("input:eq(1)").val()),
+      //   Number($("input:eq(2)").val()),
+      // ];
     </script>
   </body>
 </html>
