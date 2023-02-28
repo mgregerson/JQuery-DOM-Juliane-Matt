@@ -105,11 +105,16 @@
     </div>
     <script src="https://unpkg.com/jquery"></script>
     <script>
-      $("article").children("img").attr("class", "image-center");
-      $("p").last().remove();
+      "use strict";
+      
+      $("article img").children("img").attr("class", "image-center");
+      $("p").last().remove();  //should be able to add img and remove .children
 
-      function getRandomNumber(size) {
-        return Math.floor(Math.random() * size);
+      /** getRandomNumber: takes a max number and returns a random number between
+       * 0 and the max
+       */
+      function getRandomNumber(max) {
+        return Math.floor(Math.random() * max);
       }
 
       $("#title").css("font-size", getRandomNumber(100));
@@ -118,10 +123,10 @@
 
       $("aside").html(
         "<p>I sincerely apologize for caring so much about puppies in cups. Won't happen again.</p>"
-      );
+      );  // could also use .text to add this paragraphs so this line isn't so long
 
       $("input").on("change", function () {
-        let backgroundColorsInput = [
+        let backgroundColorsInput = [ // might make 3 variables with easier names; don't need number
           Number($("input").val()),
           Number($("input:eq(1)").val()),
           Number($("input:eq(2)").val()),
@@ -135,11 +140,14 @@
         );
       });
 
-      // let backgroundColorsInput = [
-      //   Number($("input").val()),
-      //   Number($("input:eq(1)").val()),
-      //   Number($("input:eq(2)").val()),
-      // ];
+      /** deleteImage: takes and event and removes it from DOM */
+     function deleteImage(event) {
+      $(event.target).remove();  // event.target, not img
+     }
+     
+     $("img").on("click", deleteImage);
+
+
     </script>
   </body>
 </html>
